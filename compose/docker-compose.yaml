@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  postgres:
+    ports:
+      - "5432:5432"
+    image: postgres:12.6
+    environment:
+      POSTGRES_DB: "test-db"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    command: ["postgres", "-c", "log_statement=all"]
+  postgres-task:
+    ports:
+      - "5433:5432"
+    image: postgres:12.6
+    environment:
+      POSTGRES_DB: "task-db"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"

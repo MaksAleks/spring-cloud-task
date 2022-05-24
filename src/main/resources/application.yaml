@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: hw-sct
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test-db
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+  cloud:
+    task:
+      datasource:
+        username: postgres
+        password: postgres
+        driverClassName: org.postgresql.Driver
+        jdbc-url: jdbc:postgresql://localhost:5433/task-db
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+logging:
+  level:
+    org.springframework.cloud:
+          task: DEBUG
